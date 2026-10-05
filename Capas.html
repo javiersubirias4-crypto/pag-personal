@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Elementos en capas y Texto sobre Imagen</title>
+    <!-- Usamos SpiderMan.jpg dentro de la carpeta img como icono de la pestaña -->
+    <link rel="icon" type="image/jpg" href="img/SpiderMan.jpg">
+    <style>
+        body {
+            color: black;
+            font: 600 14px/24px "Open Sans", "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+            margin: 20px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+
+        /* --- Estilos para Elementos en Capas --- */
+        .cuadros {
+            background: #eaeaed;
+            height: 160px; 
+            width: 370px;
+            position: relative;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .cuadro {
+            background: #2db34a;
+            border: 2px solid #ff7b29;
+            height: 80px; 
+            width: 80px;
+            line-height: 80px;
+            position: absolute;
+            text-align: center;
+            border-radius: 6px;
+        }
+        .cuadro-1 { left: 10px; top: 10px; }
+        .cuadro-2 { bottom: 10px; left: 70px; z-index: 3; opacity: 0.8; }
+        .cuadro-3 { left: 130px; top: 10px; z-index: 2; }
+        .cuadro-4 { bottom: 10px; left: 190px; z-index: 1; }
+
+        /* --- Estilos para Texto sobre Imagen --- */
+        .container {
+            position: relative;
+            max-width: 1000px;
+            margin-bottom: 40px;
+        }
+        .topleft { position: absolute; top: 8px; left: 16px; font-size: 18px; }
+        .topright { position: absolute; top: 8px; right: 16px; font-size: 18px; }
+        .bottomleft { position: absolute; bottom: 8px; left: 16px; font-size: 18px; }
+        .bottomright { position: absolute; bottom: 8px; right: 16px; font-size: 18px; }
+        .center {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            transform: translateY(-50%);
+        }
+        img {
+            width: 100%;
+            height: auto;
+            opacity: 0.3;
+            border-radius: 6px;
+        }
+
+        /* --- Estilos para Reubicación de un DIV --- */
+        .div-reubicado {
+            width: 300px;
+            height: 100px;
+            background-color: cyan;
+            border: 3px solid black;
+            transform: translate(50px, 100px);
+            padding: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sección 1: Capas -->
+    <h2>Organizando elementos en capas</h2>
+    <p>Los elementos que se muestran en una ventana pueden colocarse en un orden específico, dando prioridad a unos elementos sobre otros[cite: 1]:</p>
+    <div class="cuadros">
+        <figure class="cuadro cuadro-1">Cuadro 1</figure>
+        <figure class="cuadro cuadro-2">Cuadro 2</figure>
+        <figure class="cuadro cuadro-3">Cuadro 3</figure>
+        <figure class="cuadro cuadro-4">Cuadro 4</figure>
+    </div>
+
+    <!-- Sección 2: Texto sobre Imagen -->
+    <h2>Texto sobre Imagen</h2>
+    <p>Colocando texto en distintas posiciones sobre una im&aacute;gen[cite: 1]:</p>
+    <div class="container">
+        <!-- Mapa de Chihuahua en la carpeta img -->
+        <img src="img/mapachihuahua.jpg" alt="mapachihuahua" width="1000" height="417">
+        <div class="topleft">Superior Izquierda</div>
+        <div class="topright">Superior Derecha</div>
+        <div class="bottomleft">Inferior Izquierda</div>
+        <div class="bottomright">Inferior Derecha</div>
+        <div class="center">Centrado</div>
+    </div>
+
+    <!-- Sección 3: Reubicación -->
+    <h2>Reubicando un DIV</h2>
+    <p>Se puede transformar la posición de un DIV con el método de trasladar[cite: 1]:</p>
+    <div class="div-reubicado">
+        El método translate() altera la posición original de un elemento. El elemento DIV que se muestra aquí, está movido 50 pixeles a la derecha y 100 pixeles hacia abajo, a partir de su posición original[cite: 1].
+    </div>
+
+</body>
+</html>
